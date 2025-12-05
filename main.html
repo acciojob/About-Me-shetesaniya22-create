@@ -1,1 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    section {
+      margin-bottom: 25px;
+    }
+
+    #img img {
+      width: 150px;
+      border-radius: 50%;
+      border: 3px solid #333;
+    }
+
+    h3 {
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .skills-section {
+      width: 60%;
+    }
+
+    .skill {
+      margin-bottom: 15px;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .progress-bar {
+      background: #ddd;
+      border-radius: 10px;
+      height: 12px;
+    }
+
+    .progress {
+      height: 12px;
+      border-radius: 10px;
+    }
+
+    .html { width: 90%; background: #e34c26; }
+    .css { width: 85%; background: #2965f1; }
+    .js { width: 75%; background: #f0db4f; }
+    .mongo { width: 70%; background: #4db33d; }
+    .node { width: 80%; background: #3c873a; }
+
+    .badges {
+      margin-top: 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #333;
+      color: white;
+      padding: 6px 14px;
+      margin: 5px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section id="img">
+    <img src="data:image/jpeg;base64,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" alt="Profile Image">
+  </section>
+
+  <section id="name">
+    <h3>Name:</h3>
+    <p>Saniya Sunil Shete</p>
+  </section>
+
+  <section id="mail">
+    <h3>Email:</h3>
+    <p>shetesaniya22@gmail.com</p>
+  </section>
+
+  <section id="profile">
+    <h3>Profile:</h3>
+    <p>Software Developer</p>
+  </section>
+
+  <section id="about-me">
+    <h3>About Me:</h3>
+    <p>
+      A MEAN Software Developer uses the MEAN stack (MongoDB, Express.js, Angular, and Node.js)
+      to build fast, scalable, and dynamic web applications. They solve real-world problems by
+      developing efficient APIs, managing databases, and creating responsive user interfaces.
+      By handling both front-end and back-end development, they streamline business processes such as
+      online payments, inventory tracking, and user management.
+    </p>
+  </section>
+
+  <section class="skills-section">
+    <h2>Skills</h2>
+
+    <div class="skill">
+      <div class="skill-info">
+        <span>HTML</span>
+        <span>90%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress html"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-info">
+        <span>CSS</span>
+        <span>85%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress css"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-info">
+        <span>JavaScript</span>
+        <span>75%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress js"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-info">
+        <span>MongoDB</span>
+        <span>70%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress mongo"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-info">
+        <span>Node.js</span>
+        <span>80%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress node"></div>
+      </div>
+    </div>
+
+    <div class="badges">
+      <span class="badge">MEAN Stack</span>
+      <span class="badge">Web Development</span>
+      <span class="badge">API Design</span>
+    </div>
+  </section>
+
+</body>
+</html>
